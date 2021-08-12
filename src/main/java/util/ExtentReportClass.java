@@ -9,25 +9,31 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class ExtentReportClass {
-	private String reportName;
+	String testcasename;
+	private static String reportName;
 	public static ExtentHtmlReporter htmlreporter;
 	public static ExtentReports reporter;
-	public static ExtentTest currentlyRunningTest;
+	public static ExtentTest currentlyRunningSuit;
+	public ExtentTest currentlyRunningTest;
 
-	public ExtentReportClass(String reportName) {
-		this.reportName = reportName;
-	}
+	
 
-	public void startExtentReport() {
+	public static  void startExtentReport(String suiteName) {
 		//String date=new Date();
+		ExtentReportClass.reportName = suiteName;
 		htmlreporter = new ExtentHtmlReporter("Reports\\ExtentReport.html");
 		htmlreporter.config().setDocumentTitle("My Personal Project");
 		htmlreporter.setAppendExisting(true);
 		htmlreporter.setStartTime(new Date());
 		reporter = new ExtentReports();
 		reporter.attachReporter(htmlreporter);
-		currentlyRunningTest = reporter.createTest(reportName);
-		currentlyRunningTest.getModel().setStartTime(new Date());
+		currentlyRunningSuit = reporter.createTest(reportName);
+		currentlyRunningSuit.getModel().setStartTime(new Date());
+	}
+	public void startTestCaseReport(String testCaseName) {
+		this.testcasename=testCaseName;
+		currentlyRunningTest=	currentlyRunningSuit.createNode(testCaseName);
+		
 	}
 
 	public void log(Status status, String description) {
@@ -38,7 +44,7 @@ public class ExtentReportClass {
 
 	public void log(Status status, String description, String imagePath) {
 		try {
-
+			
 			currentlyRunningTest.log(status, description,MediaEntityBuilder.createScreenCaptureFromPath(imagePath).build());
 					
 		} catch (Exception e) {
@@ -47,9 +53,9 @@ public class ExtentReportClass {
 
 	}
 
-	public void closeExtentReport() {
+	public static void closeExtentReport() {
 		htmlreporter.setEndTime(new Date());
-		currentlyRunningTest.getModel().setEndTime(new Date());
+		currentlyRunningSuit.getModel().setEndTime(new Date());
 		reporter.flush();
 
 	}

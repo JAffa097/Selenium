@@ -6,6 +6,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Properties;
 
+import org.testng.Assert;
+
 import com.aventstack.extentreports.Status;
 
 public class ReportsGeneratorClass {
@@ -13,7 +15,7 @@ public class ReportsGeneratorClass {
 	String individualImagesPath;
 	String wordDocReportPath;
 	Properties prop;
-	public ExtentReportClass reportclass;
+	public  ExtentReportClass reportclass;
 	WordReport wordReport;
 	Map<String,String> wordReportImages = new LinkedHashMap<String, String>();
 
@@ -38,15 +40,16 @@ public class ReportsGeneratorClass {
 		
 	}
 	public void startReporting(String methodName) {
-		reportclass = new ExtentReportClass(methodName);
-		reportclass.startExtentReport();
+		reportclass = new ExtentReportClass();
+		reportclass.startTestCaseReport(methodName);
 	}
 public void printLog(Status status, String description, String imagePath) {
 		
 		wordReportImages.put(description, imagePath);
 		reportclass.log(status, description);
-		if(status.name().equalsIgnoreCase("fail"))
+		if(status.name().equalsIgnoreCase("fail")) {
 		closeExecution(Status.FAIL);
+		}
 		
 	}
 	
@@ -60,18 +63,23 @@ public void printLog(Status status, String description, String imagePath) {
 			 printLog(status, description,  imagePath);
 		}
 		
-		if(status.name().equalsIgnoreCase("fail"))
+		if(status.name().equalsIgnoreCase("fail")) {
 			closeExecution(Status.FAIL);
+			Assert.fail();
+		}
 		
 		
 	}
 	
 	public void closeExecution(Status status) {
-		reportclass.closeExtentReport();
+		//reportclass.closeExtentReport();
 		wordReport =new WordReport(wordDocReportPath,reportName,wordReportImages);
 		wordReport.createWordReport(status);
 		
 		
+	}
+	public  static void flushReports() {
+		ExtentReportClass.closeExtentReport();;
 	}
 	
 	
