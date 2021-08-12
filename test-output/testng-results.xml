@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="1" failed="0" ignored="0" total="2" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="14152" started-at="2021-08-12T22:05:01 IST" finished-at="2021-08-12T22:05:15 IST">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="14152" started-at="2021-08-12T22:05:01 IST" finished-at="2021-08-12T22:05:15 IST">
+      <class name="first.OrangeHrmAssignLeave">
+        <test-method status="PASS" signature="setup(java.lang.reflect.Method)[pri:0, instance:first.OrangeHrmAssignLeave@10dba097]" name="setup" is-config="true" duration-ms="3028" started-at="2021-08-12T22:05:01 IST" finished-at="2021-08-12T22:05:04 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void first.OrangeHrmAssignLeave.assignLeave() throws java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="assignLeave()[pri:0, instance:first.OrangeHrmAssignLeave@10dba097]" name="assignLeave" duration-ms="11088" started-at="2021-08-12T22:05:04 IST" finished-at="2021-08-12T22:05:15 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assignLeave -->
+        <test-method status="PASS" signature="cleanDriver()[pri:0, instance:first.OrangeHrmAssignLeave@10dba097]" name="cleanDriver" is-config="true" duration-ms="870" started-at="2021-08-12T22:05:15 IST" finished-at="2021-08-12T22:05:16 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanDriver -->
+      </class> <!-- first.OrangeHrmAssignLeave -->
+      <class name="first.OrangeHRm">
+        <test-method status="FAIL" signature="setup(java.lang.String,java.lang.reflect.Method)[pri:0, instance:first.OrangeHRm@706a04ae]" name="setup" is-config="true" duration-ms="-1628786115315" started-at="2021-08-12T22:05:15 IST" finished-at="1970-01-01T05:30:00 IST">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'Port' is required by BeforeMethod on method setup but has not been marked @Optional or defined
+in C:\Users\krishna reddy\eclipse-workspace\SeleniumF\testng.xml]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'Port' is required by BeforeMethod on method setup but has not been marked @Optional or defined
+in C:\Users\krishna reddy\eclipse-workspace\SeleniumF\testng.xml
+at org.testng.internal.Parameters.createParams(Parameters.java:270)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:358)
+at org.testng.internal.Parameters.createParameters(Parameters.java:700)
+at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:168)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:302)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="SKIP" signature="loginTest()[pri:0, instance:first.OrangeHRm@706a04ae]" name="loginTest" duration-ms="0" started-at="2021-08-12T22:05:15 IST" finished-at="2021-08-12T22:05:15 IST">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'Port' is required by BeforeMethod on method setup but has not been marked @Optional or defined
+in C:\Users\krishna reddy\eclipse-workspace\SeleniumF\testng.xml]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'Port' is required by BeforeMethod on method setup but has not been marked @Optional or defined
+in C:\Users\krishna reddy\eclipse-workspace\SeleniumF\testng.xml
+at org.testng.internal.Parameters.createParams(Parameters.java:270)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:358)
+at org.testng.internal.Parameters.createParameters(Parameters.java:700)
+at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:168)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:302)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="SKIP" signature="cleanDriver()[pri:0, instance:first.OrangeHRm@706a04ae]" name="cleanDriver" is-config="true" duration-ms="-1628786115320" started-at="2021-08-12T22:05:15 IST" finished-at="1970-01-01T05:30:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanDriver -->
+      </class> <!-- first.OrangeHRm -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
