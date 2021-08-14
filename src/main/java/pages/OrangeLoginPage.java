@@ -38,8 +38,7 @@ public class OrangeLoginPage extends ScriptsClass   {
 		printLog(Status.PASS, "Navigated to Login page", true);
 		enterText(password, "admin123");
 		click(loginButton);
-		printLog(Status.PASS, "Navigated to Home Page");
-		//Added by local
+		printLog(Status.PASS, "Navigated to Home Page")'
 		
 	}
 	
