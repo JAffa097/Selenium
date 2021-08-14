@@ -39,6 +39,7 @@ public class OrangeLoginPage extends ScriptsClass   {
 		enterText(password, "admin123");
 		click(loginButton);
 		printLog(Status.PASS, "Navigated to Home Page");
+		//Added by local
 		
 	}
 	

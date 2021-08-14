@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="23057" started-at="2021-08-12T22:19:18 IST" finished-at="2021-08-12T22:19:42 IST">
+  <suite name="Suitename" duration-ms="13430" started-at="2021-08-13T00:10:25 IST" finished-at="2021-08-13T00:10:39 IST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="23057" started-at="2021-08-12T22:19:18 IST" finished-at="2021-08-12T22:19:42 IST">
+    <test name="Test" duration-ms="13430" started-at="2021-08-13T00:10:25 IST" finished-at="2021-08-13T00:10:39 IST">
       <class name="first.OrangeHrmAssignLeave">
-        <test-method status="PASS" signature="setup(java.lang.reflect.Method)[pri:0, instance:first.OrangeHrmAssignLeave@10dba097]" name="setup" is-config="true" duration-ms="1977" started-at="2021-08-12T22:19:18 IST" finished-at="2021-08-12T22:19:20 IST">
+        <test-method status="PASS" signature="setup(java.lang.reflect.Method)[pri:0, instance:first.OrangeHrmAssignLeave@1786f9d5]" name="setup" is-config="true" duration-ms="1970" started-at="2021-08-13T00:10:25 IST" finished-at="2021-08-13T00:10:27 IST">
           <params>
             <param index="0">
               <value>
@@ -18,17 +18,17 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="assignLeave()[pri:0, instance:first.OrangeHrmAssignLeave@10dba097]" name="assignLeave" duration-ms="10735" started-at="2021-08-12T22:19:20 IST" finished-at="2021-08-12T22:19:31 IST">
+        <test-method status="PASS" signature="assignLeave()[pri:0, instance:first.OrangeHrmAssignLeave@1786f9d5]" name="assignLeave" duration-ms="11226" started-at="2021-08-13T00:10:27 IST" finished-at="2021-08-13T00:10:39 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- assignLeave -->
-        <test-method status="PASS" signature="cleanDriver()[pri:0, instance:first.OrangeHrmAssignLeave@10dba097]" name="cleanDriver" is-config="true" duration-ms="712" started-at="2021-08-12T22:19:42 IST" finished-at="2021-08-12T22:19:42 IST">
+        <test-method status="PASS" signature="cleanDriver()[pri:0, instance:first.OrangeHrmAssignLeave@1786f9d5]" name="cleanDriver" is-config="true" duration-ms="715" started-at="2021-08-13T00:10:39 IST" finished-at="2021-08-13T00:10:40 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanDriver -->
       </class> <!-- first.OrangeHrmAssignLeave -->
       <class name="first.OrangeHRm">
-        <test-method status="PASS" signature="setup(java.lang.String,java.lang.reflect.Method)[pri:0, instance:first.OrangeHRm@706a04ae]" name="setup" is-config="true" duration-ms="1327" started-at="2021-08-12T22:19:31 IST" finished-at="2021-08-12T22:19:33 IST">
+        <test-method status="PASS" signature="setup(java.lang.String,java.lang.reflect.Method)[pri:0, instance:first.OrangeHRm@6eceb130]" name="setup" is-config="true" duration-ms="1966" started-at="2021-08-13T00:10:25 IST" finished-at="2021-08-13T00:10:27 IST">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -42,15 +42,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:first.OrangeHRm@706a04ae]" name="loginTest" duration-ms="7717" started-at="2021-08-12T22:19:33 IST" finished-at="2021-08-12T22:19:40 IST">
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:first.OrangeHRm@6eceb130]" name="loginTest" duration-ms="7806" started-at="2021-08-13T00:10:27 IST" finished-at="2021-08-13T00:10:35 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="cleanDriver()[pri:0, instance:first.OrangeHRm@706a04ae]" name="cleanDriver" is-config="true" duration-ms="1272" started-at="2021-08-12T22:19:40 IST" finished-at="2021-08-12T22:19:42 IST">
+        <test-method status="PASS" signature="cleanDriver()[pri:0, instance:first.OrangeHRm@6eceb130]" name="cleanDriver" is-config="true" duration-ms="1157" started-at="2021-08-13T00:10:35 IST" finished-at="2021-08-13T00:10:36 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanDriver -->
       </class> <!-- first.OrangeHRm -->
     </test> <!-- Test -->
-  </suite> <!-- Suite -->
+  </suite> <!-- Suitename -->
 </testng-results>
