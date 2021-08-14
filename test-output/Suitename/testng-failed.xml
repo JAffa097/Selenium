@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suitename]">
+  <parameter name="Port" value="4444"/>
   <listeners>
     <listener class-name="listeners.Listeners"/>
   </listeners>
   <test thread-count="5" name="Test(failed)" parallel="classes">
     <classes>
+      <class name="first.OrangeHRm">
+        <methods>
+          <include name="setup"/>
+          <include name="loginTest"/>
+          <include name="cleanDriver"/>
+        </methods>
+      </class> <!-- first.OrangeHRm -->
       <class name="first.OrangeHrmAssignLeave">
         <methods>
           <include name="cleanDriver"/>

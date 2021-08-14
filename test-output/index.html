@@ -127,21 +127,6 @@
           <div class="suite-Suitename-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">first.OrangeHrmAssignLeave</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="assignLeave">
-                  </a> <!-- assignLeave -->
-                  <span class="method-name">assignLeave</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suitename-class-passed -->
-          <div class="suite-Suitename-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
               <span class="class-name">first.OrangeHRm</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -150,6 +135,21 @@
                   <a name="loginTest">
                   </a> <!-- loginTest -->
                   <span class="method-name">loginTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suitename-class-passed -->
+          <div class="suite-Suitename-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">first.OrangeHrmAssignLeave</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="assignLeave">
+                  </a> <!-- assignLeave -->
+                  <span class="method-name">assignLeave</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -164,10 +164,11 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suitename&quot;&gt;
+  &lt;parameter name=&quot;Port&quot; value=&quot;4444&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;listeners.Listeners&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot; parallel=&quot;classes&quot;&gt;
+  &lt;test thread-count=&quot;1&quot; name=&quot;Test&quot; parallel=&quot;classes&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;first.OrangeHrmAssignLeave&quot;/&gt;
       &lt;class name=&quot;first.OrangeHRm&quot;/&gt;
@@ -214,16 +215,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'assignLeave')
 data.setCell(0, 2, 'first.OrangeHrmAssignLeave')
-data.setCell(0, 3, 11226);
+data.setCell(0, 3, 10397);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'loginTest')
 data.setCell(1, 2, 'first.OrangeHRm')
-data.setCell(1, 3, 7806);
+data.setCell(1, 3, 7282);
 window.suiteTableData['Suitename']= { tableData: data, tableDiv: 'times-div-Suitename'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 19 seconds</span>
+              <span class="suite-total-time">Total running time: 17 seconds</span>
               <div id="times-div-Suitename">
               </div> <!-- times-div-Suitename -->
             </div> <!-- times-div -->
@@ -251,41 +252,32 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">first.OrangeHrmAssignLeave</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">setup(public void first.OrangeHrmAssignLeave.assignLeave() throws java.io.IOException)</span>
+                <span class="method-name">setup(4444, public void first.OrangeHrmAssignLeave.assignLeave() throws java.io.IOException)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">assignLeave</span>
+                <span class="method-start">1315 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">cleanDriver</span>
+                <span class="method-start">11714 ms</span>
+              </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">first.OrangeHRm</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">setup(null, public void first.OrangeHRm.loginTest() throws java.io.IOException)</span>
-                <span class="method-start">0 ms</span>
+                <span class="method-name">setup(4444, public void first.OrangeHRm.loginTest() throws java.io.IOException)</span>
+                <span class="method-start">12020 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">loginTest</span>
-                <span class="method-start">1966 ms</span>
+                <span class="method-start">12206 ms</span>
               </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">first.OrangeHrmAssignLeave</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">assignLeave</span>
-                <span class="method-start">1970 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">first.OrangeHRm</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">cleanDriver</span>
-                <span class="method-start">9775 ms</span>
+                <span class="method-start">19489 ms</span>
               </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">first.OrangeHrmAssignLeave</div> <!-- chronological-class-name -->
-              <div class="configuration-suite after">
-                <span class="method-name">cleanDriver</span>
-                <span class="method-start">13436 ms</span>
-              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

@@ -17,7 +17,7 @@ public class Listeners implements ITestListener {
 		if(!(port.equals("")||port.equals(" "))) {
 		try {
 			Runtime.getRuntime().exec("cmd /c start \"\" createcontainer.bat");
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 			 Runtime.getRuntime().exec("taskkill /f /im cmd.exe") ;
 		} catch (Exception e) {
 			
@@ -34,7 +34,7 @@ public class Listeners implements ITestListener {
  if(!(port.equals("")||port.equals(" "))) {
  try {
 	Runtime. getRuntime().exec("cmd /c start \"\" stopcontainer.bat");
-	Thread.sleep(10000);
+	Thread.sleep(5000);
 	Runtime.getRuntime().exec("taskkill /f /im cmd.exe") ;
 } catch (Exception e) {
 	

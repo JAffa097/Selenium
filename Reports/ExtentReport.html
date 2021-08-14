@@ -1,0 +1,2786 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>My Personal Project</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>ExtentReports</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Aug 14, 2021 09:49:49 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>50</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>184</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 07:58:42 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 07:58:42 PM</span>
+	<span class='label end-time'>Aug 14, 2021 07:58:42 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='2'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+233ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:58:48 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_19_58_48.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_19_58_48.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_19_58_48.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:58:53 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='3'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+237ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 08:00:20 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 08:00:20 PM</span>
+	<span class='label end-time'>Aug 14, 2021 08:00:20 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='5'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+239ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 08:01:38 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 08:01:38 PM</span>
+	<span class='label end-time'>Aug 14, 2021 08:01:52 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 14s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='7'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+242ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:01:44 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_01_44.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_01_44.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_01_44.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:01:49 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:01:50 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:01:50 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:01:52 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:01:52 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 08:10:56 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 08:10:56 PM</span>
+	<span class='label end-time'>Aug 14, 2021 08:11:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 14s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='9'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+245ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:11:03 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_11_03.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_11_03.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_11_03.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:11:07 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='10'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+246ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:11:03 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_11_03.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_11_03.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_11_03.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:11:07 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:11:09 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:11:09 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:11:10 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:11:10 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 08:12:28 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 08:12:28 PM</span>
+	<span class='label end-time'>Aug 14, 2021 08:12:48 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='12'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+250ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:12:33 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_12_33.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_12_33.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_12_33.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:12:37 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:12:38 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:12:39 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:12:40 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:12:40 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='13'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+251ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:12:44 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_12_44.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_12_44.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_12_44.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:12:48 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 08:32:51 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 08:32:51 PM</span>
+	<span class='label end-time'>Aug 14, 2021 08:32:51 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='15'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+253ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='16'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+254ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='17'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 08:38:12 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 08:38:12 PM</span>
+	<span class='label end-time'>Aug 14, 2021 08:38:22 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 10s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='18'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+256ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:38:17 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_38_17.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_38_17.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_38_17.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:38:22 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:38:23 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:38:23 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:38:24 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:38:24 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='19'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+257ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:38:17 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_38_17.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_38_17.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_38_17.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:38:22 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='20'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 08:38:47 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 08:38:47 PM</span>
+	<span class='label end-time'>Aug 14, 2021 08:39:06 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='21'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+259ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:38:51 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_38_51.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_38_51.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_38_51.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:38:55 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:38:57 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:38:57 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:38:58 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:38:58 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='22'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+260ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:39:02 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_39_02.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_39_02.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_39_02.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:39:06 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='23'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 08:51:31 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 08:51:31 PM</span>
+	<span class='label end-time'>Aug 14, 2021 08:51:51 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='24'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+262ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:51:36 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_51_36.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_51_36.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_51_36.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:51:40 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:51:42 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:51:42 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:51:43 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:51:43 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='25'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+264ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:51:47 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_51_47.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_51_47.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_51_47.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:51:51 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='26'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 08:59:11 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 08:59:11 PM</span>
+	<span class='label end-time'>Aug 14, 2021 08:59:31 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='27'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+266ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:59:16 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_59_16.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_59_16.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_59_16.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:59:20 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:59:21 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:59:22 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:59:23 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:59:23 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='28'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+268ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:59:27 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_59_27.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_59_27.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_20_59_27.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:59:31 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='29'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 09:04:59 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 09:04:59 PM</span>
+	<span class='label end-time'>Aug 14, 2021 09:05:19 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='30'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+270ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:05:04 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_05_04.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_05_04.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_05_04.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:05:08 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:05:09 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:05:09 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:05:10 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:05:11 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='31'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+271ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:05:15 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_05_14.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_05_14.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_05_14.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:05:19 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='32'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 09:08:11 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 09:08:11 PM</span>
+	<span class='label end-time'>Aug 14, 2021 09:08:30 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='33'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+273ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:08:15 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_08_15.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_08_15.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_08_15.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:08:20 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:08:21 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:08:21 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:08:22 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:08:22 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='34'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+274ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:08:26 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_08_26.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_08_26.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_08_26.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:08:30 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='35'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 09:09:13 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 09:09:13 PM</span>
+	<span class='label end-time'>Aug 14, 2021 09:09:33 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='36'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+276ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:09:18 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_09_18.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_09_18.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_09_18.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:09:23 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:09:24 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:09:24 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:09:25 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:09:25 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='37'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+277ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:09:29 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_09_29.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_09_29.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_09_29.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:09:33 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='38'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 09:11:38 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 09:11:38 PM</span>
+	<span class='label end-time'>Aug 14, 2021 09:11:50 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 12s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='39'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+280ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:11:43 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_11_43.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_11_43.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_11_43.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:11:47 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:11:49 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:11:49 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:11:50 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:11:50 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='40'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 09:12:37 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 09:12:37 PM</span>
+	<span class='label end-time'>Aug 14, 2021 09:12:46 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 9s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='41'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+282ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:12:42 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_12_42.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_12_42.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_12_42.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:12:46 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='42'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 09:13:45 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 09:13:45 PM</span>
+	<span class='label end-time'>Aug 14, 2021 09:14:05 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='43'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+284ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:13:51 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_13_50.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_13_50.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_13_50.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:13:55 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:13:56 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:13:56 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:13:57 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:13:57 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='44'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+285ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:14:01 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_14_01.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_14_01.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_14_01.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:14:05 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='45'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 09:20:12 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 09:20:12 PM</span>
+	<span class='label end-time'>Aug 14, 2021 09:20:33 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 21s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='46'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+287ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:20:17 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_20_17.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_20_17.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_20_17.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:20:21 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:20:23 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:20:23 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:20:24 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:20:24 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='47'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+288ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:20:28 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_20_28.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_20_28.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_20_28.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:20:33 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='48'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 09:21:27 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 09:21:27 PM</span>
+	<span class='label end-time'>Aug 14, 2021 09:21:47 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='49'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+289ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:21:32 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_21_32.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_21_32.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_21_32.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:21:36 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:21:37 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:21:37 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:21:38 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:21:39 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='50'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+290ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:21:43 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_21_43.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_21_43.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_21_43.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:21:47 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='51'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 09:22:32 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 09:22:32 PM</span>
+	<span class='label end-time'>Aug 14, 2021 09:22:53 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 21s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='52'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+292ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:22:38 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_22_38.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_22_38.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_22_38.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:22:42 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:22:43 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:22:43 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:22:44 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:22:44 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='53'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+293ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:22:49 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_22_49.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_22_49.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_22_49.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:22:53 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='54'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 09:23:50 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 09:23:50 PM</span>
+	<span class='label end-time'>Aug 14, 2021 09:24:09 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='55'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+295ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:23:55 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_23_55.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_23_55.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_23_55.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:23:59 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:24:00 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:24:00 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:24:01 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:24:01 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='56'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+296ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:24:05 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_24_05.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_24_05.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_24_05.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:24:09 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='57'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 09:27:19 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 09:27:19 PM</span>
+	<span class='label end-time'>Aug 14, 2021 09:27:39 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='58'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+298ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:27:24 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_27_24.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_27_24.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_27_24.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:27:28 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:27:29 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:27:29 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:27:30 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:27:31 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='59'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+298ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:27:35 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_27_35.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_27_35.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_27_35.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:27:39 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='60'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 09:30:32 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 09:30:32 PM</span>
+	<span class='label end-time'>Aug 14, 2021 09:30:51 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='61'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+300ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:30:37 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_30_37.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_30_37.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_30_37.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:30:41 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:30:42 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:30:42 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:30:43 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:30:44 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='62'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+301ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:30:48 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_30_47.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_30_47.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_30_47.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:30:51 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='63'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 09:33:20 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 09:33:20 PM</span>
+	<span class='label end-time'>Aug 14, 2021 09:33:40 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='64'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+302ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:33:25 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_33_25.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_33_25.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_33_25.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:33:29 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:33:30 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:33:30 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:33:31 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:33:31 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='65'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+305ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:33:35 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_33_35.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_33_35.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_33_35.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:33:40 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='66'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 09:34:47 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 09:34:47 PM</span>
+	<span class='label end-time'>Aug 14, 2021 09:35:07 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='67'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+308ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:34:52 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_34_52.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_34_52.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_34_52.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:34:56 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:34:57 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:34:57 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:34:58 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:34:59 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='68'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+312ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:35:03 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_35_03.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_35_03.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_35_03.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:35:07 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='69'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 09:38:18 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 09:38:18 PM</span>
+	<span class='label end-time'>Aug 14, 2021 09:38:37 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='70'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+314ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:38:23 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_38_22.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_38_22.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_38_22.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:38:27 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:38:28 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:38:28 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:38:29 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:38:29 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='71'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 41s+315ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:38:34 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_38_34.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_38_34.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_38_34.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:38:37 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='72'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 09:39:09 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 09:39:09 PM</span>
+	<span class='label end-time'>Aug 14, 2021 09:39:28 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+0ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='73'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 30s+316ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:39:14 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_39_14.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_39_14.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_39_14.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:39:18 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:39:19 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:39:19 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:39:20 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:39:20 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='74'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:49:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 10m 22s+317ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:39:24 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_39_24.jpeg" width="10%" src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_39_24.jpeg" data-src="C:\Users\krishna reddy\git\Selenium1\WordReport\Individualimages\14_08_2021_21_39_24.jpeg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:39:28 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='75'>
+					<div class='test-heading'>
+						<span class='test-name'>Suitename</span>
+						<span class='test-time'>Aug 14, 2021 09:49:50 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 14, 2021 09:49:50 PM</span>
+	<span class='label end-time'>Aug 14, 2021 09:50:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+353ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='76'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>assignLeave</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:50:02 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 12s+400ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:49:56 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight='C:\Users\krishna reddy\Desktop\dolby\New folder\Selenium\Selenium\WordReport\Individualimages\14_08_2021_21_49_55.jpeg' width='10%' src='C:\Users\krishna reddy\Desktop\dolby\New folder\Selenium\Selenium\WordReport\Individualimages\14_08_2021_21_49_55.jpeg' data-src='C:\Users\krishna reddy\Desktop\dolby\New folder\Selenium\Selenium\WordReport\Individualimages\14_08_2021_21_49_55.jpeg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:50:00 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:50:01 PM</td>
+													<td class='step-details'>Clicked on Assign Leave</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:50:01 PM</td>
+													<td class='step-details'>Selected employee</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:50:02 PM</td>
+													<td class='step-details'>Selected startdate and enddate</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:50:02 PM</td>
+													<td class='step-details'>clicked on assign</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='77'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>loginTest</h5>
+						<span class="node-time label grey lighten-1 white-text">Aug 14, 2021 09:50:10 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 7s+543ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:50:06 PM</td>
+													<td class='step-details'>Navigated to Login page<img data-featherlight='C:\Users\krishna reddy\Desktop\dolby\New folder\Selenium\Selenium\WordReport\Individualimages\14_08_2021_21_50_06.jpeg' width='10%' src='C:\Users\krishna reddy\Desktop\dolby\New folder\Selenium\Selenium\WordReport\Individualimages\14_08_2021_21_50_06.jpeg' data-src='C:\Users\krishna reddy\Desktop\dolby\New folder\Selenium\Selenium\WordReport\Individualimages\14_08_2021_21_50_06.jpeg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:50:10 PM</td>
+													<td class='step-details'>Navigated to Home Page</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>50</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>184</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Aug 14, 2021 09:49:49 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Aug 14, 2021 09:50:10 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 20s+806ms</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 50,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 184,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>
