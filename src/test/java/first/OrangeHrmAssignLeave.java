@@ -38,7 +38,7 @@ public class OrangeHrmAssignLeave {
   }
  
   
-  @AfterSuite
+  @AfterMethod
 	public void cleanDriver()  {
 	  homePage.closeExecution(Status.PASS);
 	  
