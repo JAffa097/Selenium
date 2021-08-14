@@ -16,6 +16,7 @@ import com.aventstack.extentreports.Status;
 import driverandscriptspackage.DriverClass;
 import pages.OrangeHomePage;
 import pages.OrangeLoginPage;
+import util.ExcelData;
 import util.ReportsGeneratorClass;
 
 public class OrangeHRm {
@@ -25,7 +26,7 @@ public class OrangeHRm {
 	@Parameters("Port")
 	public void setup(@Optional String Port,Method method ) {
 		reportingclass=new ReportsGeneratorClass(method.getName());
-		loginPage = new OrangeLoginPage(new DriverClass().getDriver(Port),  reportingclass);
+		loginPage = new OrangeLoginPage(new DriverClass().getDriver(Port),  reportingclass, new ExcelData(method.getName()).getTestData());
 		
 	}
   @Test(enabled=true)

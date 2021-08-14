@@ -14,6 +14,7 @@ import com.aventstack.extentreports.Status;
 import driverandscriptspackage.DriverClass;
 import pages.OrangeHomePage;
 import pages.OrangeLoginPage;
+import util.ExcelData;
 import util.ReportsGeneratorClass;
 
 public class OrangeHrmAssignLeave {
@@ -23,8 +24,8 @@ public class OrangeHrmAssignLeave {
 	@BeforeMethod
 	public void setup(Method method) {
 		reportingclass=new ReportsGeneratorClass(method.getName());
-		loginPage = new OrangeLoginPage(new DriverClass().getDriver("df"),  reportingclass);
-		homePage = new OrangeHomePage(loginPage.driver, reportingclass);
+		loginPage = new OrangeLoginPage(new DriverClass().getDriver("df"),  reportingclass, new ExcelData(method.getName()).getTestData());
+		homePage = new OrangeHomePage(loginPage.driver, reportingclass, new ExcelData(method.getName()).getTestData());
 	}
   @Test(enabled=true)
   public void assignLeave() throws IOException {

@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
@@ -20,30 +21,35 @@ import org.testng.Assert;
 
 import com.aventstack.extentreports.Status;
 
+import util.ExcelData;
 import util.ExtentReportClass;
 import util.ReportsGeneratorClass;
 import util.WordReport;
 
 public class ScriptsClass extends DriverClass {
 
-	String individualImagesPath;
-	String wordDocReportPath;
-	Properties prop;
-	ExtentReportClass reportclass;
-	WordReport wordReport;
+	public String individualImagesPath;
+	public String wordDocReportPath;
+	public Properties prop;
+	public ExtentReportClass reportclass;
+	public WordReport wordReport;
 	public ReportsGeneratorClass reportingclass;
+
 	
 
 	public WebDriver driver;
 	
 	public ScriptsClass() throws IOException {
 		this.driver=getDriver();
+		
+		
 	}
 	
 	public ScriptsClass(WebDriver driver, ReportsGeneratorClass reportingclass)  {
 		this.driver=driver;
 		loadProperties();
 		this.reportingclass=reportingclass;
+		
 		
 	}
 

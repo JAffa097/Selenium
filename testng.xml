@@ -4,10 +4,11 @@
 <listeners>
 <listener class-name="listeners.Listeners"/>
 </listeners>
-  <test thread-count="5" name="Test" parallel="classes">
+  <test thread-count="2" name="Test" parallel="classes">
     <classes>
       <class name="first.OrangeHrmAssignLeave"/>
-      <class name="first.OrangeHRm"/>
+       <class name="first.OrangeHRm"/>
+      
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
