@@ -4,7 +4,8 @@
 <listeners>
 <listener class-name="listeners.Listeners"/>
 </listeners>
-  <test thread-count="2" name="Test" parallel="classes">
+<parameter name="Port" value="4444"/>
+  <test thread-count="1" name="Test" parallel="classes">
     <classes>
       <class name="first.OrangeHrmAssignLeave"/>
        <class name="first.OrangeHRm"/>

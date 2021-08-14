@@ -16,8 +16,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 
 public class DriverClass {
-	private ThreadLocal<ChromeDriver> driver= new ThreadLocal();
-	RemoteWebDriver driver1;;
+	private WebDriver driver;
+	
 	public static FileInputStream file;
 	public static Properties properties;
 
@@ -34,31 +34,34 @@ public class DriverClass {
 		if ("chrome".equalsIgnoreCase("chrome")) {
 			//System.setProperty("webdriver.chrome.driver", properties.getProperty("chromedriverpath"));
 			System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Java\\Selenium\\chromedriver_win32\\chromedriver.exe");
-			driver.set(new ChromeDriver());
+			driver =new ChromeDriver();
 
 		} else {
 			System.setProperty("webdriver.edge.driver", properties.getProperty("edgedriverpath"));
 			//driver = new EdgeDriver();
 		}
-		driver.get().manage().window().maximize();
-		driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public WebDriver getDriver(String s)  {
-		if(driver.get()==null)
+	public WebDriver getDriver(String port)  {
+		if(driver==null)
 			try {
+				if(port.equals("")||port.equalsIgnoreCase(" "))
 				initializeDriver();
+				else
+					getRemoteDriver(port);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
-		return driver.get();
+		return driver;
 	}
-	public WebDriver getDriver() throws MalformedURLException  {
+	public void getRemoteDriver(String port) throws MalformedURLException  {
 		 System.setProperty("webdriver.chrome.whitelistedIps", "");
 		DesiredCapabilities dc = new DesiredCapabilities().chrome();
 		dc.setBrowserName("chrome");
@@ -68,7 +71,7 @@ public class DriverClass {
 		co.addArguments("--verbose","--headless","--disable-web-security","--ignore-certificate-errors","--allow-insecure-locathost");
 		
 	
-			return  new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), co);
+			driver= new RemoteWebDriver(new URL("http://localhost:"+port+"/wd/hub"), co);
 		
 		
 		

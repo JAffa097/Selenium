@@ -39,11 +39,6 @@ public class ScriptsClass extends DriverClass {
 
 	public WebDriver driver;
 	
-	public ScriptsClass() throws IOException {
-		this.driver=getDriver();
-		
-		
-	}
 	
 	public ScriptsClass(WebDriver driver, ReportsGeneratorClass reportingclass)  {
 		this.driver=driver;
